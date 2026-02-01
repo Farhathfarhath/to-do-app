@@ -1,26 +1,17 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-}
+function addTask() {
+  let taskInput = document.getElementById("taskInput");
+  let taskText = taskInput.value;
 
-.container {
-  width: 300px;
-  margin: 100px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-}
+  if (taskText === "") {
+    alert("Please enter a task");
+    return;
+  }
 
-input {
-  width: 70%;
-  padding: 5px;
-}
+  let li = document.createElement("li");
+  li.textContent = taskText;
 
-button {
-  padding: 6px 10px;
-  cursor: pointer;
-}
+  let taskList = document.getElementById("taskList");
+  taskList.appendChild(li);
 
-li {
-  margin-top: 10px;
+  taskInput.value = "";
 }
